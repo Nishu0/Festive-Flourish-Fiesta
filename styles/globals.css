@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  background: #4393c4ff;
+  position: relative;
+  overflow: hidden;
+}
+
+#snowcape-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/capa-de-nieve.svg');
+  background-size: cover;
+  position: absolute;
+  bottom: -325px;
+  z-index: 200;
+  animation: snowfall infinite 35s;
+}
+
+@-webkit-keyframes snowfall {
+  0% {
+      bottom: -325px;
+  }
+  50% {
+      bottom: 0px;
+  }
+  100% {
+      bottom: -325px;
+  }
+}
+
+@keyframes snowfall {
+  0% {
+      bottom: -325px;
+  }
+  50% {
+      bottom: 0px;
+  }
+  100% {
+      bottom: -325px;
+  }
+}
+
+#snowflake {
+  width: 7px;
+  height: 7px;
+  border-radius: 50px;
+  background-color: #f9f5f4;
+  box-shadow: 4px 4px 8px #ffffff52, -4px -4px 8px #ffffff52;
+}
+
+#para{
+  z-index: 100;
+}
+@-webkit-keyframes snowflakes-fall {
+  0% {
+      top: -10%
+  }
+  100% {
+      top: 100%
+  }
+}
+
+@-webkit-keyframes snowflakes-shake {
+  0% {
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px)
+  }
+  50% {
+      -webkit-transform: translateX(80px);
+      transform: translateX(80px)
+  }
+  100% {
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px)
+  }
+}
+
+@keyframes snowflakes-fall {
+  0% {
+      top: -10%
+  }
+  100% {
+      top: 100%
+  }
+}
+
+@keyframes snowflakes-shake {
+  0% {
+      transform: translateX(0px)
+  }
+  50% {
+      transform: translateX(80px)
+  }
+  100% {
+      transform: translateX(0px)
+  }
+}
+
+#snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 100;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+  -webkit-animation-duration: 10s, 3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+
+#snowflake:nth-of-type(0) {
+  left: 1%;
+  -webkit-animation-delay: 0s, 0s;
+  animation-delay: 0s, 0s;
+}
+
+#snowflake:nth-of-type(1) {
+  left: 10%;
+  -webkit-animation-delay: 1s, 1s;
+  animation-delay: 1s, 1s;
+}
+
+#snowflake:nth-of-type(2) {
+  left: 20%;
+  -webkit-animation-delay: 6s, .5s;
+  animation-delay: 6s, .5s;
+}
+
+#nieve:nth-of-type(3) {
+  left: 30%;
+  -webkit-animation-delay: 4s, 2s;
+  animation-delay: 4s, 2s;
+}
+
+#snowflake:nth-of-type(4) {
+  left: 40%;
+  -webkit-animation-delay: 2s, 2s;
+  animation-delay: 2s, 2s;
+}
+
+#snowflake:nth-of-type(5) {
+  left: 50%;
+  -webkit-animation-delay: 8s, 3s;
+  animation-delay: 8s, 3s;
+}
+
+#snowflake:nth-of-type(6) {
+  left: 60%;
+  -webkit-animation-delay: 6s, 2s;
+  animation-delay: 6s, 2s;
+}
+
+#snowflake:nth-of-type(7) {
+  left: 70%;
+  -webkit-animation-delay: 2.5s, 1s;
+  animation-delay: 2.5s, 1s;
+}
+
+#snowflake:nth-of-type(8) {
+  left: 80%;
+  -webkit-animation-delay: 1s, 0s;
+  animation-delay: 1s, 0s;
+}
+
+#snowflake:nth-of-type(9) {
+  left: 90%;
+  -webkit-animation-delay: 3s, 1.5s;
+  animation-delay: 3s, 1.5s;
+}
+
+#box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#santa {
+  width: 80%;
+  height: 60%;
+  background-image: url(../public/santa.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: -250px;
+}
+
+#box p {
+  font-size: 3em;
+  font-family: 'Pacifico', cursive;
+}
+
+#btn-home {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 300;
+}
+
+#btn-home a {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4393c4;
+  border: 3px solid #d8f6fe;
+  box-shadow: 4px 4px 8px #00000052, -4px -4px 8px #ffffff52;
+  border-radius: 50px;
+  font-size: 1.2em;
+  font-family: 'Pacifico', cursive;
+  text-decoration: none;
+  color: #d8f6fe;
+}
+
+@media (max-width: 1181px) {
+  #btn-home a {
+      background-color: #d8f6fe;
+      border: 3px solid #d8f6fe;
+      color: #4393c4;
+  }
+}
